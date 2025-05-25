@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myPortfolio - Home</title>
+    <link rel="icon" type="image/png" href="img/AquakiraIcon.png">
+    <link rel="stylesheet" type="stylesheet/css" href="css/home.css">
+</head>
+<body class="bg-slate-800">
+    <div id="header"></div>
+        <!--Hero Section-->
+        <section class="section-theme">
+            <h1 class="title">Hello, I'm Brian Junior Lee Meng Hang</h1>
+            <p class="subtitle">Welcome to my portfolio</p>
+            <span class="tagline">Web Developer | Student | Software Engineer</span>
+            <a href="project.html" class="cta-button">View My Work</a>
+        </section>
+
+         <!-- About Section -->
+        <section class="intro-section">
+            <div class="intro-container">
+                <h2 class="intro-title">Introduction</h2>
+                <p class="intro-text">
+                    I'm a Software Engineering student currently undergoing internship, passionate about web development. I enjoy building web applications using Laravel and Tailwind CSS, and I'm eager to grow as a professional developer.
+                </p>
+            </div>
+        </section>
+
+        <!-- Portfolio Preview -->
+        <section class="portfolio-section">
+            <div class="portfolio-container">
+                <h2 class="portfolio-title">Skills</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3 class="project-name">Web Design</h3>
+                        <p class="project-description">HTML, CSS, JS</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-name">Web Application</h3>
+                        <p class="project-description">Laravel + Tailwind CSS</p>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                    <div class="project-card">
+                        <h3 class="project-name">Mobile Application</h3>
+                        <p class="project-description">Flutter or React Native still learn</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     <div id="footer"></div>
+
+    <script>
+            fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;})
+            .catch(err=> console.error('Failed to load header:', err));
+
+            fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;})
+            .catch(err=> console.error('Failed to load header:', err));
+    </script>
+
+</body>
+</html>
