@@ -5,10 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myPorfolio - Project</title>
     <link rel="icon" type="image/png" href="img/AquakiraIcon.png">
+    <link rel="stylesheet" href="css/project.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
     <div id="header"></div>
 
+    <!--Main Content-->
+    <main class="portfolio-section">
+        <div class="portfolio-container">
+            <h1 class="portfolio-title">My Projects</h1>
+            
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                <h3 class="project-name">E-Incident Reporting System</h3>
+                <p class="project-description">A web-based system for real-time incident tracking using Laravel, Tailwind CSS, and Chart.js. Features analytics, user roles, and mobile-friendly API.</p>
+                <a href="https://github.com/your-username/e-incident" target="_blank" class="project-link">
+                    <i class="fas fa-arrow-right"></i> View on GitHub
+                </a>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                <h3 class="project-name">Personal Portfolio</h3>
+                <p class="project-description">Responsive personal website built with HTML, CSS, and JavaScript. Includes About, Projects, and Contact sections with dark mode and animations.</p>
+                <a href="https://your-portfolio-link.com" target="_blank" class="project-link">
+                    <i class="fas fa-arrow-right"></i> Visit Site
+                </a>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                <h3 class="project-name">Task Manager (Flutter)</h3>
+                <p class="project-description">Mobile app for managing daily tasks with Flutter. Features CRUD operations, notification alerts, and Firebase integration.</p>
+                <a href="https://github.com/your-username/flutter-task-manager" target="_blank" class="project-link">
+                    <i class="fas fa-arrow-right"></i> View on GitHub
+                </a>
+                </div>
+
+                <!-- Add more projects below as needed -->
+            </div>
+        </div>
+    </main>
     <div id="footer"></div>
     <script>
             fetch('header.html')

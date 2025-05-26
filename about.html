@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>myPorfolio - About</title>
-    <link rel="stylesheet" type="stylesheet/css" href="css/about.css">
     <link rel="icon" type="image/png" href="img/AquakiraIcon.png">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/home.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <div id="header"></div>
@@ -14,41 +17,87 @@
     <main class="about-container">
         <section class="about-section">
         <h1>About Me</h1>
-        <p>Hello! I'm a passionate and motivated student currently pursuing my studies in Bachelor of Software Engineering with Honours at Universiti Malaysia Sarawak.</p>
-        <p>I am currently undergoing an internship at Apploqic Technogies PLT, where I am gaining real-world experience in web development, software developer, software engineering.</p>
-        <p>After completing this internship, I have one more year of study before I graduate. I’m excited to continue learning and growing my skills, especially in Web Developer(Laravel), Software developer, Software tester and software Engineer.</p>
+        <div class="about-text">
+            <p>
+            👋 Hello! I'm a <span class="highlight">passionate student</span> currently pursuing a 
+            <strong>Bachelor of Software Engineering with Honours</strong> at 
+            <span class="highlight">Universiti Malaysia Sarawak (UNIMAS)</span>.
+            </p>
+            
+            <p>
+            🚀 I'm currently doing my internship at 
+            <span class="highlight">Apploqic Technologies PLT</span>, where I'm building real-world skills in 
+            <span class="tag">Web Development</span>, 
+            <span class="tag">Software Engineering</span>, and 
+            <span class="tag">Testing</span>.
+            </p>
+
+            <p>
+            🎓 After this internship, I’ll have one more year of study before I graduate. I’m excited to keep learning 
+            and growing in areas like 
+            <span class="highlight">Laravel development</span>, 
+            <span class="highlight">software testing</span>, and 
+            <span class="highlight">software Engineer</span>.
+            </p>
+        </div>
         </section>
 
         <section class="skills-section">
         <h2>Skills & Technologies</h2>
-        <ul class="skills-list">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Laravel (Mid)</li>
-            <li>Tailwind CSS</li>
-            <li>Python (Basic)</li>
-            <li>Git & GitHub</li>
-            <li>React Native JS (Basic)</li>
-            <li>Canva</li>
-            <li>Figma</li>
-            <li>Flutter (Basic)</li>
-        </ul>
+
+        <div class="skills-group">
+            <h3>Frontend</h3>
+            <div class="skills-badges">
+            <span class="skill-badge"><i class="fab fa-html5"></i> HTML</span>
+            <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</span>
+            <span class="skill-badge"><i class="fab fa-js"></i> JavaScript</span>
+            <span class="skill-badge">Tailwind CSS</span>
+            <span class="skill-badge">React Native JS (Basic)</span>
+            <span class="skill-badge">Flutter (Basic)</span>
+            </div>
+        </div>
+
+        <div class="skills-group">
+            <h3>Backend</h3>
+            <div class="skills-badges">
+            <span class="skill-badge"><i class="fab fa-laravel"></i> Laravel (Mid-level)</span>
+            <span class="skill-badge">Python (Basic)</span>
+            </div>
+        </div>
+
+        <div class="skills-group">
+            <h3>Tools & Design</h3>
+            <div class="skills-badges">
+            <span class="skill-badge"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+            <span class="skill-badge"><i class="fab fa-figma"></i> Figma</span>
+            <span class="skill-badge"><i class="fas fa-paint-brush"></i> Canva</span>
+            </div>
+        </div>
         </section>
 
         <section class="education-section">
-        <h2>Education</h2>
-        <p>Universiti Malaysia Sarawak</p>
-        <p>Bachelor of Software Engineering with Honours</p>
-        <p>Except Graduation: 2026</p>
-        <p>Politeknik Mukah Sarawak</p>
-        <p>Diploma in Information Technology (DDT)</p>
-        <p>Graduation: 2021</p>
+            <div class="section-heading">
+                <h2>Education</h2>
+            </div>
+            <div class="education-card degree">
+                <h3>Universiti Malaysia Sarawak</h3>
+                <p>Bachelor of Software Engineering with Honours</p>
+                <p>Expected Graduation: 2026</p>
+            </div>
+            
+            <div class="education-card diploma">
+                <h3>Politeknik Mukah Sarawak</h3>
+                <p>Diploma in Information Technology (DDT)</p>
+                <p>Graduation: 2021</p>
+            </div>
         </section>
 
         <section class="resume-section">
-        <h2>Resume</h2>
-        <p><a href="your-resume.pdf" target="_blank">Download My Resume (PDF)</a></p>
+            <h2>Resume</h2>
+            <p class="resume-text">Click the button below to download my latest resume in PDF format.</p>
+            <a href="cv/Brian Junior Lee Meng Hang_CV.pdf" class="resume-button" target="_blank" download="Brian Junior Lee Meng Hang_CV.pdf">
+                <i class="fas fa-download"></i> Download My Resume
+            </a>
         </section>
     </main>
 
