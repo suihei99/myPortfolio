@@ -242,7 +242,7 @@ body::before {
   top: 10%;
   left: 0%;
   width: 200%;
-  height: 240%;
+  height: auto;
   background: radial-gradient(circle, rgba(54, 88, 142, 0.1) 0%, transparent 70%) repeat;
   background-size: 150px 150px;
   animation: backgroundScroll 60s linear infinite;
