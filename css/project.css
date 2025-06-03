@@ -1,3 +1,11 @@
+body {
+    background-color: #202124;
+    color: #e5e7eb;
+    overflow-x: hidden;
+     font-family: 'Michroma', sans-serif;
+    margin:0
+}
+
 /*default prevent layout*/
 *,
 *::before,
@@ -7,10 +15,26 @@
 
 
 .portfolio-section {
-  background: linear-gradient(135deg, #0C1B1E, #014D4E, #2E1A47);
-  background-size: 400% 400%;
+  background: radial-gradient(circle at top left, #0f172a, #0a0e1a, #000);
   animation: bgShift 15s ease infinite;
-  padding: 5rem 1.5rem;
+  position: relative;
+  z-index: 0;
+}
+
+.portfolio-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.02) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 2;
 }
 
 .portfolio-container {
@@ -52,12 +76,12 @@
 }
 
 .tech-badge {
-  padding: 0.3rem 0.75rem;
-  font-size: 0.8rem;
-  background-color: #334155;
-  color: #f1f5f9;
-  border-radius: 9999px;
-  transition: background 0.3s ease;
+ background: rgba(14, 165, 233, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  color: #7dd3fc;
+  padding: 0.5rem 0.6rem;
+  text-shadow: 0 0 5px #38bdf8;
+  backdrop-filter: blur(2px);
 }
 
 .project-card:hover .tech-badge {
@@ -66,22 +90,48 @@
 
 .portfolio-title {
   font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 3rem;
-  color: #53a8f6;
+  color: #c1f2ff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   position: relative;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  display: inline-block;
+  border-bottom: 2px solid #38bdf8;
 }
+
 
 .portfolio-title::after {
   content: '';
-  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 60px;
-  height: 3px;
-  background: #fbbf24;
-  margin: 0.5rem auto 0;
-  border-radius: 3px;
-  animation: slideIn 1s ease-in-out;
+  height: 2px;
+  background: linear-gradient(90deg, #38bdf8, transparent);
+  animation: scanline 2.5s linear infinite;
 }
+
+@keyframes scanline {
+  0% {
+    left: 0;
+    width: 0;
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 1;
+  }
+  50% {
+    width: 100%;
+    opacity: 0.6;
+  }
+  100% {
+    left: 100%;
+    width: 0;
+    opacity: 0;
+  }
+}
+
 
 .project-grid {
   display: grid;
@@ -117,13 +167,30 @@
 }
 
 .project-card {
-  background: #1e293b;
+  background: linear-gradient(145deg, #12151c, #0c0e13);
+  border: 1px solid rgba(56, 189, 248, 0.2);
   border-radius: 1rem;
   padding: 2rem;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  opacity: 0;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   animation: fadeIn 0.8s ease forwards;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(56, 189, 248, 0.03),
+    rgba(56, 189, 248, 0.03) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
 .project-card:nth-child(1) { animation-delay: 0.1s; }
@@ -132,15 +199,16 @@
 /* and so on */
 
 .project-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.3);
 }
 
 .project-name {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: 1.3rem;
+  font-weight: bold;
   color: #facc15;
-  margin-bottom: 0.75rem;
+  text-shadow: 0 0 8px rgba(234, 179, 8, 0.6);
+  letter-spacing: 1px;
 }
 
 .project-description {
@@ -155,14 +223,13 @@
   font-weight: 500;
   text-decoration: none;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .project-link:hover {
-  color: #7dd3fc;
-  transform: translateX(5px);
-  text-decoration: underline;
+  color: #facc15;
+  text-shadow: 0 0 5px #fbbf24;
 }
 
 

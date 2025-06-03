@@ -1,45 +1,154 @@
 body.dark-mode {
-  background-color: #0f172a;
-  color: #f9fafb;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0b0f1c;
+  color: #e2e8f0;
+  font-family: 'Michroma', sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 300px;
+  height: 300px;
+  background: #38bdf877;
+  filter: blur(120px);
+  z-index: 0;
 }
 
 .contact-container {
-  min-height: 61vh; /* Ensures full screen */
+   min-height: 100vh;
+  padding: 4rem 2rem;
+  background: radial-gradient(circle at top left, #1e293b 0%, #0b0f1c 100%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 4rem 2rem;
-  background: linear-gradient(135deg, #0C1B1E, #2E1A47);
-  color: #f9fafb;
   position: relative;
-  overflow: hidden; /* Allows animated element inside */
+  z-index: 1;
+  animation: zoomInFade 1s ease-out;
+}
+
+@keyframes zoomInFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.tag-title {
+  font-size: 0.8rem;
+  color: #38bdf8;
+  letter-spacing: 2px;
+  background: rgba(56, 189, 248, 0.1);
+  padding: 4px 12px;
+  border-left: 4px solid #38bdf8;
+  margin-bottom: 1rem;
+  animation: slideInTag 1s ease-out;
+}
+
+@keyframes slideInTag {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .contact-title {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #38bdf8;
-  margin-bottom: 2rem;
-  animation: fadeInDown 0.8s ease-out;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.contact-title::after {
+  content: "";
+  display: block;
+  margin: 0.5rem auto 0;
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(to right, #38bdf8, transparent);
+  animation: scanline 2s infinite;
+}
+
+@keyframes scanline {
+  0% { width: 0; opacity: 0.1; }
+  50% { width: 80px; opacity: 1; }
+  100% { width: 0; opacity: 0.1; }
+}
+
+.contact-info::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(56, 189, 248, 0.1) 50%,
+    transparent 100%
+  );
+  animation: sweep 4s linear infinite;
+  pointer-events: none;
+}
+
+.contact-info {
+  background-color: rgba(30, 41, 59, 0.4);
+  border: 1px solid #38bdf8;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px #38bdf8aa;
+  max-width: 600px;
+  width: 100%;
+  animation: fadeIn 1s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes sweep {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
 }
 
 .contact-item {
-  font-size: 1.1rem;
-  margin: 1rem 0;
-  color: #e2e8f0;
+ font-size: 1rem;
+  margin: 1.2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contact-item i {
+  color: #38bdf8;
+  font-size: 1.2rem;
 }
 
 .contact-link {
-  color: #38bdf8;
+  color: #7dd3fc;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .contact-link:hover {
-  color: #7dd3fc;
+  color: #bae6fd;
   text-decoration: underline;
 }
 
@@ -47,36 +156,33 @@ body.dark-mode {
   margin-top: 2rem;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
 .social-btn {
-  background-color: #1e293b;
-  color: #f9fafb;
-  padding: 0.75rem 1.25rem;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  color: #e2e8f0;
+  padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.9rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: background 0.3s ease, transform 0.3s ease;
+  border: 1px solid #38bdf8;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #0ea5e9aa;
 }
 
 .social-btn:hover {
   background-color: #38bdf8;
   color: #0f172a;
-  transform: scale(1.05);
+  transform: translateY(-2px) scale(1.05);
 }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
