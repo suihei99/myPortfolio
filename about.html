@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/home.css">
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Michroma:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="header"></div>
@@ -114,6 +115,18 @@
             .then(data => {
                 document.getElementById('footer').innerHTML = data;})
             .catch(err=> console.error('Failed to load header:', err));
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('section').forEach(section => {
+                observer.observe(section);
+            });
     </script>
 </body>
 </html>

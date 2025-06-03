@@ -2,6 +2,8 @@ body {
     background-color: #202124;
     color: #e5e7eb;
     overflow-x: hidden;
+     font-family: 'Michroma', sans-serif;
+    margin:0
 }
 
 /* Container */
@@ -57,10 +59,15 @@ section {
   padding: 2rem;
   margin-bottom: 3rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
   animation: fadeInUp 0.8s forwards;
+}
+
+section.in-view {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 section:hover {
@@ -119,6 +126,9 @@ h1, h2 {
   background-color: #1e293b;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  position: relative;
+  padding-left: 2rem;
+  border-left: 4px solid #60a5fa;
 }
 
 /*education header CSS*/
@@ -139,6 +149,8 @@ h1, h2 {
   background: #334155; /* slate-700 */
   padding: 1.5rem 2rem;
   border-radius: 1rem;
+  position: relative;
+  margin-left: 1rem;
   flex: 1 1 300px;  /* responsive width */
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -177,6 +189,18 @@ h1, h2 {
   color: #cbd5e1; /* light slate */
 }
 
+.education-card::before {
+    content: '';
+    position: absolute;
+    left: -2.4rem;
+    top: 1rem;
+    width: 1rem;
+    height: 1rem;
+    background-color: #60a5fa;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px #1e293b;
+}
+
 /* Resume Link & CSS Section */
 .resume-section {
   background-color: #0f172a;
@@ -210,11 +234,19 @@ h1, h2 {
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s;
 }
+.resume-button i {
+    transition: transform 0.3s ease;
+}
+
+.resume-button:hover i {
+    transform: rotate(-20deg) scale(1.1);
+}
 
 .resume-button:hover {
   transform: scale(1.05);
   background: linear-gradient(to right, #2563eb, #0ea5e9);
   box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  animation: pulseResume 0.5s ease-in-out;
 }
 
 /* Animations */
@@ -231,9 +263,6 @@ h1, h2 {
   100% { transform: scale(1); }
 }
 
-.resume-button:hover {
-  animation: pulseResume 0.5s ease-in-out;
-}
 
 /* Optional: glowing dot background (light touch) */
 body::before {
